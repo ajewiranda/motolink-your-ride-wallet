@@ -9,7 +9,7 @@ export const mockMotors: Motor[] = [
     cc: 160,
     year: 2023,
     pricePerDay: 85000,
-    location: 'Jakarta Selatan',
+    location: 'Malang Kota',
     rating: 4.8,
     totalReviews: 124,
     images: [
@@ -31,7 +31,7 @@ export const mockMotors: Motor[] = [
     cc: 155,
     year: 2023,
     pricePerDay: 95000,
-    location: 'Jakarta Pusat',
+    location: 'Lowokwaru',
     rating: 4.9,
     totalReviews: 89,
     images: [
@@ -53,7 +53,7 @@ export const mockMotors: Motor[] = [
     cc: 160,
     year: 2024,
     pricePerDay: 110000,
-    location: 'Bandung',
+    location: 'Blimbing',
     rating: 4.7,
     totalReviews: 56,
     images: [
@@ -63,7 +63,7 @@ export const mockMotors: Motor[] = [
     description: 'Honda PCX 160 model terbaru dengan desain premium dan fitur canggih.',
     features: ['Smart Key', 'LED Lamp', 'USB Charger', 'Helm Premium'],
     ownerId: 'owner3',
-    ownerName: 'Moto Rent Bandung',
+    ownerName: 'Moto Rent Malang',
     ownerPhone: '6281234567892',
     isAvailable: true,
   },
@@ -75,7 +75,7 @@ export const mockMotors: Motor[] = [
     cc: 250,
     year: 2022,
     pricePerDay: 250000,
-    location: 'Surabaya',
+    location: 'Klojen',
     rating: 4.9,
     totalReviews: 34,
     images: [
@@ -97,7 +97,7 @@ export const mockMotors: Motor[] = [
     cc: 110,
     year: 2023,
     pricePerDay: 65000,
-    location: 'Jakarta Selatan',
+    location: 'Sukun',
     rating: 4.5,
     totalReviews: 201,
     images: [
@@ -119,7 +119,7 @@ export const mockMotors: Motor[] = [
     cc: 155,
     year: 2023,
     pricePerDay: 100000,
-    location: 'Yogyakarta',
+    location: 'Kedungkandang',
     rating: 4.6,
     totalReviews: 78,
     images: [
@@ -129,7 +129,7 @@ export const mockMotors: Motor[] = [
     description: 'Yamaha Aerox 155 dengan desain sporty dan performa tinggi.',
     features: ['VVA Engine', 'LED DRL', 'Smart Key', 'Wide Tire'],
     ownerId: 'owner5',
-    ownerName: 'Jogja Rental',
+    ownerName: 'Aerox Rental Malang',
     ownerPhone: '6281234567894',
     isAvailable: true,
   },
@@ -137,13 +137,10 @@ export const mockMotors: Motor[] = [
 
 export const locations = [
   'Semua Lokasi',
-  'Jakarta Selatan',
-  'Jakarta Pusat',
-  'Jakarta Barat',
-  'Jakarta Timur',
-  'Jakarta Utara',
-  'Bandung',
-  'Surabaya',
-  'Yogyakarta',
-  'Bali',
+  'Malang Kota',
+  'Lowokwaru',
+  'Blimbing',
+  'Klojen',
+  'Sukun',
+  'Kedungkandang',
 ];
