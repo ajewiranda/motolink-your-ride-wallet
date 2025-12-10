@@ -4,44 +4,109 @@ interface MotoLinkLogoProps {
   className?: string;
   size?: "sm" | "md" | "lg" | "xl";
   showText?: boolean;
+  variant?: "default" | "white";
 }
 
-export function MotoLinkLogo({ className, size = "md", showText = true }: MotoLinkLogoProps) {
+export function MotoLinkLogo({ className, size = "md", showText = true, variant = "default" }: MotoLinkLogoProps) {
   const sizes = {
-    sm: { icon: 32, text: "text-lg" },
-    md: { icon: 40, text: "text-xl" },
-    lg: { icon: 56, text: "text-2xl" },
-    xl: { icon: 72, text: "text-3xl" },
+    sm: { icon: 40, text: "text-sm" },
+    md: { icon: 56, text: "text-base" },
+    lg: { icon: 72, text: "text-lg" },
+    xl: { icon: 96, text: "text-xl" },
   };
 
-  const { icon, text } = sizes[size];
+  const { icon } = sizes[size];
+
+  const primaryColor = variant === "white" ? "#FFFFFF" : "#1A73E8";
+  const secondaryColor = variant === "white" ? "rgba(255,255,255,0.15)" : "#E8F1FD";
+  const textOnBadge = variant === "white" ? "#1A73E8" : "#FFFFFF";
 
   return (
-    <div className={cn("flex items-center gap-2", className)}>
-      <div 
-        className="relative flex items-center justify-center rounded-xl motolink-gradient motolink-shadow"
-        style={{ width: icon, height: icon }}
+    <div className={cn("flex items-center gap-3", className)}>
+      <svg
+        width={icon}
+        height={icon}
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          className="w-2/3 h-2/3"
-          stroke="currentColor"
+        {/* Badge circle background */}
+        <circle cx="50" cy="50" r="48" fill={secondaryColor} stroke={primaryColor} strokeWidth="3" />
+        
+        {/* Inner circle */}
+        <circle cx="50" cy="50" r="38" fill={primaryColor} />
+        
+        {/* Handlebar - left mirror */}
+        <circle cx="18" cy="35" r="6" fill={secondaryColor} stroke={primaryColor} strokeWidth="2" />
+        <line x1="24" y1="35" x2="35" y2="42" stroke={primaryColor} strokeWidth="3" strokeLinecap="round" />
+        
+        {/* Handlebar - right mirror */}
+        <circle cx="82" cy="35" r="6" fill={secondaryColor} stroke={primaryColor} strokeWidth="2" />
+        <line x1="76" y1="35" x2="65" y2="42" stroke={primaryColor} strokeWidth="3" strokeLinecap="round" />
+        
+        {/* Handlebar center with speedometer */}
+        <path
+          d="M35 42 Q50 35 65 42 L62 50 Q50 45 38 50 Z"
+          fill={secondaryColor}
+          stroke={primaryColor}
           strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+        />
+        
+        {/* Speedometer circle */}
+        <circle cx="50" cy="44" r="5" fill={secondaryColor} stroke={primaryColor} strokeWidth="1.5" />
+        
+        {/* Text: MOTO */}
+        <text
+          x="50"
+          y="62"
+          textAnchor="middle"
+          fill={textOnBadge}
+          fontFamily="'Plus Jakarta Sans', sans-serif"
+          fontWeight="800"
+          fontSize="14"
+          letterSpacing="2"
         >
-          <circle cx="5.5" cy="17.5" r="3.5" className="fill-primary-foreground/20 stroke-primary-foreground" />
-          <circle cx="18.5" cy="17.5" r="3.5" className="fill-primary-foreground/20 stroke-primary-foreground" />
-          <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" className="fill-primary-foreground stroke-primary-foreground" />
-          <path d="m12 17 2-8h3l.5 2" className="stroke-primary-foreground" />
-          <path d="M9 17L7 9h3l2 4 2-4" className="stroke-primary-foreground" />
-        </svg>
-      </div>
+          MOTO
+        </text>
+        
+        {/* Text: LINK */}
+        <text
+          x="50"
+          y="76"
+          textAnchor="middle"
+          fill={textOnBadge}
+          fontFamily="'Plus Jakarta Sans', sans-serif"
+          fontWeight="800"
+          fontSize="14"
+          letterSpacing="2"
+        >
+          LINK
+        </text>
+        
+        {/* Decorative line */}
+        <line x1="30" y1="81" x2="70" y2="81" stroke={textOnBadge} strokeWidth="1" strokeOpacity="0.5" />
+        
+        {/* Stars */}
+        <circle cx="40" cy="86" r="1.5" fill={textOnBadge} />
+        <circle cx="50" cy="86" r="1.5" fill={textOnBadge} />
+        <circle cx="60" cy="86" r="1.5" fill={textOnBadge} />
+      </svg>
+      
       {showText && (
-        <div className={cn("font-bold tracking-tight", text)}>
-          <span className="motolink-gradient-text">Moto</span>
-          <span className="text-foreground">Link</span>
+        <div className="flex flex-col">
+          <span className={cn(
+            "font-extrabold tracking-tight leading-none",
+            sizes[size].text,
+            variant === "white" ? "text-white" : "motolink-gradient-text"
+          )}>
+            MOTOLINK
+          </span>
+          <span className={cn(
+            "text-xs tracking-widest",
+            variant === "white" ? "text-white/70" : "text-muted-foreground"
+          )}>
+            RENTAL
+          </span>
         </div>
       )}
     </div>
