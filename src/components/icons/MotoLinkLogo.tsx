@@ -19,7 +19,8 @@ export function MotoLinkLogo({ className, size = "md", showText = true, variant 
 
   const primaryColor = variant === "white" ? "#FFFFFF" : "#1A73E8";
   const secondaryColor = variant === "white" ? "rgba(255,255,255,0.15)" : "#E8F1FD";
-  const textOnBadge = variant === "white" ? "#1A73E8" : "#FFFFFF";
+  const strokeColor = "#FFFFFF";
+  const textOnBadge = "#FFFFFF";
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
@@ -31,29 +32,29 @@ export function MotoLinkLogo({ className, size = "md", showText = true, variant 
         xmlns="http://www.w3.org/2000/svg"
       >
         {/* Badge circle background */}
-        <circle cx="50" cy="50" r="48" fill={secondaryColor} stroke={primaryColor} strokeWidth="3" />
+        <circle cx="50" cy="50" r="48" fill={secondaryColor} stroke={strokeColor} strokeWidth="3" />
         
         {/* Inner circle */}
         <circle cx="50" cy="50" r="38" fill={primaryColor} />
         
         {/* Handlebar - left mirror */}
-        <circle cx="18" cy="35" r="6" fill={secondaryColor} stroke={primaryColor} strokeWidth="2" />
-        <line x1="24" y1="35" x2="35" y2="42" stroke={primaryColor} strokeWidth="3" strokeLinecap="round" />
+        <circle cx="18" cy="35" r="6" fill={primaryColor} stroke={strokeColor} strokeWidth="2" />
+        <line x1="24" y1="35" x2="35" y2="42" stroke={strokeColor} strokeWidth="3" strokeLinecap="round" />
         
         {/* Handlebar - right mirror */}
-        <circle cx="82" cy="35" r="6" fill={secondaryColor} stroke={primaryColor} strokeWidth="2" />
-        <line x1="76" y1="35" x2="65" y2="42" stroke={primaryColor} strokeWidth="3" strokeLinecap="round" />
+        <circle cx="82" cy="35" r="6" fill={primaryColor} stroke={strokeColor} strokeWidth="2" />
+        <line x1="76" y1="35" x2="65" y2="42" stroke={strokeColor} strokeWidth="3" strokeLinecap="round" />
         
         {/* Handlebar center with speedometer */}
         <path
           d="M35 42 Q50 35 65 42 L62 50 Q50 45 38 50 Z"
-          fill={secondaryColor}
-          stroke={primaryColor}
+          fill={primaryColor}
+          stroke={strokeColor}
           strokeWidth="2"
         />
         
         {/* Speedometer circle */}
-        <circle cx="50" cy="44" r="5" fill={secondaryColor} stroke={primaryColor} strokeWidth="1.5" />
+        <circle cx="50" cy="44" r="5" fill={primaryColor} stroke={strokeColor} strokeWidth="1.5" />
         
         {/* Text: MOTO */}
         <text
