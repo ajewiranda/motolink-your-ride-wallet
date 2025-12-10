@@ -1,16 +1,16 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Search, MapPin, Bell, ChevronRight } from "lucide-react";
+import { Search, MapPin, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { WalletCard } from "@/components/ui/WalletCard";
 import { MotorCard } from "@/components/motor/MotorCard";
 import { FilterSheet } from "@/components/motor/FilterSheet";
+import { NotificationSheet } from "@/components/notifications/NotificationSheet";
 import { useApp } from "@/contexts/AppContext";
 import { FilterOptions } from "@/types";
 import { locations } from "@/data/mockMotors";
-import { cn } from "@/lib/utils";
 
 export function HomePage() {
   const { user, motors } = useApp();
@@ -69,13 +69,7 @@ export function HomePage() {
                 {user?.name || "User"}
               </h1>
             </div>
-            <Button
-              size="icon"
-              variant="ghost"
-              className="text-primary-foreground hover:bg-white/10"
-            >
-              <Bell className="w-5 h-5" />
-            </Button>
+            <NotificationSheet />
           </div>
 
           {/* Search */}
