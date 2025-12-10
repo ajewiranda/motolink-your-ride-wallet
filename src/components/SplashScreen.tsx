@@ -33,10 +33,9 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
             className="flex flex-col items-center"
           >
             {/* Logo */}
-            <MotoLinkLogo size="xl" showText={false} variant="white" />
+            <MotoLinkLogo size="xl" variant="white" />
 
-            <h1 className="text-3xl font-bold text-white mb-2 mt-6">MotoLink</h1>
-            <p className="text-white/80 text-sm">Sewa Motor Mudah & Cepat</p>
+            <p className="text-white/80 text-sm mt-4">Sewa Motor Mudah & Cepat</p>
 
             {/* Loading dots */}
             <div className="flex gap-1.5 mt-8">
