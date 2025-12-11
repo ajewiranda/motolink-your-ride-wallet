@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useGoogleLogin } from "@react-oauth/google";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,35 +12,69 @@ import { toast } from "@/hooks/use-toast";
 export function LoginPage() {
   const { login } = useApp();
   const navigate = useNavigate();
-  
+
   const [isSignUp, setIsSignUp] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  
+
   // Form fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleGoogleLogin = () => {
-    setIsLoading(true);
-    // Simulate Google login
-    setTimeout(() => {
-      login({
-        id: `user_${Date.now()}`,
-        name: "User MotoLink",
-        email: "user@motolink.id",
-        phone: "081234567890",
-        photoURL: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=200",
+  // Google Login
+  const handleGoogleLogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      setIsLoading(true);
+      try {
+        const userInfoResponse = await fetch(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
+          }
+        );
+        const userInfo = await userInfoResponse.json();
+
+        login({
+          id: userInfo.sub,
+          name: userInfo.name,
+          email: userInfo.email,
+          phone: "", // Google doesn't provide phone by default without specific scope/setup
+          photoURL: userInfo.picture,
+        });
+
+        toast({
+          title: "Login Berhasil",
+          description: `Selamat datang, ${userInfo.name}!`,
+        });
+
+        navigate("/");
+      } catch (error) {
+        console.error("Google Login Error:", error);
+        toast({
+          title: "Login Gagal",
+          description: "Gagal mengambil data pengguna dari Google",
+          variant: "destructive",
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    onError: (error) => {
+      console.error("Google Login Failed:", error);
+      toast({
+        title: "Login Gagal",
+        description: "Gagal terhubung ke Google",
+        variant: "destructive",
       });
-      navigate("/");
-    }, 1000);
-  };
+      setIsLoading(false);
+    }
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validation
     if (!email || !password) {
       toast({
@@ -78,10 +113,10 @@ export function LoginPage() {
     }
 
     setIsLoading(true);
-    
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     if (isSignUp) {
       // Simulate signup
       toast({
@@ -102,7 +137,7 @@ export function LoginPage() {
       });
       navigate("/");
     }
-    
+
     setIsLoading(false);
   };
 
