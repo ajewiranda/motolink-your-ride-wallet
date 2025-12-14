@@ -13,8 +13,7 @@ export const mockMotors: Motor[] = [
     rating: 4.8,
     totalReviews: 124,
     images: [
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
-      'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=800',
+      'https://www.antararentalbali.com/wp-content/uploads/2023/09/HONDA-VARIO-160cc-NEW-3.png'
     ],
     description: 'Honda Vario 160 terbaru dengan mesin bertenaga dan hemat bahan bakar. Cocok untuk perjalanan dalam kota maupun luar kota.',
     features: ['Bagasi Luas', 'USB Charger', 'Helm Gratis', 'Jas Hujan'],
@@ -35,8 +34,7 @@ export const mockMotors: Motor[] = [
     rating: 4.9,
     totalReviews: 89,
     images: [
-      'https://images.unsplash.com/photo-1568772585407-9361bd955bf3?w=800',
-      'https://images.unsplash.com/photo-1622185135505-2d795003994a?w=800',
+      'https://yamaha-motor.id/wp-content/uploads/2023/04/Nmax-ABS-3-600x400.png'
     ],
     description: 'Yamaha NMAX premium dengan fitur lengkap. ABS, Smart Key, dan Connected System.',
     features: ['ABS', 'Smart Key', 'Connected App', 'Bagasi Luas'],
@@ -57,8 +55,7 @@ export const mockMotors: Motor[] = [
     rating: 4.7,
     totalReviews: 56,
     images: [
-      'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=800',
-      'https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=800',
+      'https://www.hondacengkareng.com/wp-content/uploads/2018/11/Honda-PCX-160-Roadsync-Red.png'
     ],
     description: 'Honda PCX 160 model terbaru dengan desain premium dan fitur canggih.',
     features: ['Smart Key', 'LED Lamp', 'USB Charger', 'Helm Premium'],
@@ -79,8 +76,7 @@ export const mockMotors: Motor[] = [
     rating: 4.9,
     totalReviews: 34,
     images: [
-      'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800',
-      'https://images.unsplash.com/photo-1558980394-4c7c9299fe96?w=800',
+      'https://kawasakimagelang.com/wp-content/uploads/2020/02/Ninja-250-std-merah.jpeg'
     ],
     description: 'Kawasaki Ninja 250 untuk Anda yang mencari sensasi berkendara sport.',
     features: ['ABS', 'Slipper Clutch', 'Digital Display', 'Sport Exhaust'],
@@ -101,8 +97,7 @@ export const mockMotors: Motor[] = [
     rating: 4.5,
     totalReviews: 201,
     images: [
-      'https://images.unsplash.com/photo-1580310614729-ccd69652491d?w=800',
-      'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800',
+      'https://imgcdn.oto.com/large/gallery/exterior/73/2269/honda-beat-street-esp-slant-front-view-full-image-110382.jpg?tr=w-510,h-340'
     ],
     description: 'Honda Beat Street dengan harga terjangkau, cocok untuk harian.',
     features: ['Hemat BBM', 'Helm Gratis', 'Jas Hujan'],
@@ -123,8 +118,7 @@ export const mockMotors: Motor[] = [
     rating: 4.6,
     totalReviews: 78,
     images: [
-      'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800',
-      'https://images.unsplash.com/photo-1558981033-0f0309284409?w=800',
+      'https://yamaha-motor.id/wp-content/uploads/2020/11/AEROX-Silver-Cyan-600x400.png'
     ],
     description: 'Yamaha Aerox 155 dengan desain sporty dan performa tinggi.',
     features: ['VVA Engine', 'LED DRL', 'Smart Key', 'Wide Tire'],
